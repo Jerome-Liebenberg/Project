@@ -20,5 +20,17 @@ namespace ProjectPRG282
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Communications communications = new Communications();
+            communications.Show();
+            this.Hide();
+        }
     }
 }
