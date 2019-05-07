@@ -36,6 +36,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.OpenedPanel.SuspendLayout();
             this.SuspendLayout();
@@ -68,6 +69,7 @@
             // OpenedPanel
             // 
             this.OpenedPanel.BackColor = System.Drawing.Color.DarkCyan;
+            this.OpenedPanel.Controls.Add(this.button4);
             this.OpenedPanel.Controls.Add(this.button3);
             this.OpenedPanel.Controls.Add(this.button2);
             this.OpenedPanel.Controls.Add(this.button1);
@@ -120,6 +122,18 @@
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
             // 
+            // button4
+            // 
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button4.Location = new System.Drawing.Point(6, 122);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(154, 36);
+            this.button4.TabIndex = 6;
+            this.button4.Text = "Officers";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Communications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -147,5 +161,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button4;
     }
 }
