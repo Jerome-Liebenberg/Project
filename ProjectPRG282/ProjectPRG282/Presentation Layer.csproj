@@ -82,11 +82,5 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Bussiness  Layer\Bussiness  Layer.csproj">
-      <Project>{e5c43f67-99d8-4fed-b647-f8efe058757e}</Project>
-      <Name>Bussiness  Layer</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
