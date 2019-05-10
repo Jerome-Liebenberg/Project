@@ -11,7 +11,7 @@ using Bussiness__Layer;
 namespace ProjectPRG282
 {
     public partial class Form1 : Form
-    { 
+    {
         List<User> l_User = new List<User>();
         Communications communications = new Communications();
 
@@ -32,9 +32,21 @@ namespace ProjectPRG282
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Communications communications = new Communications();
-            communications.Show();
-            this.Hide();
+            string Username = txtUsername.Text;
+            string Pw = txtPassword.Text;
+
+            foreach (User user in l_User)  // Need to populate l_User with form load
+            {
+                if (Username == user.Username && Pw == user.Password) // Need to find out if High-Ranking or low-ranking to display appropriate form
+                {
+                    this.Hide();
+                    communications.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid Log in details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
