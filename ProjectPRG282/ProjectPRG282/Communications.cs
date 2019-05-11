@@ -22,11 +22,13 @@ namespace ProjectPRG282
 
         private void Communications_Load(object sender, EventArgs e)
         {
-            
+            timer1.Start();
+            OpenedPanel.Hide();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            OpenedPanel.Show();
             timer1.Start();
         }
 
