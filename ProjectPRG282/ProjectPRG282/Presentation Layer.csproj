@@ -49,19 +49,46 @@
     <Compile Include="Communications.Designer.cs">
       <DependentUpon>Communications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Decrypt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Decrypt.Designer.cs">
+      <DependentUpon>Decrypt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Officers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Officers.Designer.cs">
+      <DependentUpon>Officers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Past Communications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Past Communications.Designer.cs">
+      <DependentUpon>Past Communications.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Communications.resx">
       <DependentUpon>Communications.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Decrypt.resx">
+      <DependentUpon>Decrypt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Officers.resx">
+      <DependentUpon>Officers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Past Communications.resx">
+      <DependentUpon>Past Communications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
