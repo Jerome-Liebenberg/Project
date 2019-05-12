@@ -63,5 +63,10 @@ namespace ProjectPRG282
             decrypt.Show();
             communications.Hide();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

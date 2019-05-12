@@ -1,6 +1,6 @@
 ﻿namespace ProjectPRG282
 {
-    partial class Decrypt
+    partial class Past_Communications
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.OpenedPanel = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -36,15 +35,18 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPanelOpen = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.btnDecrypt = new System.Windows.Forms.Button();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.btnSend = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button5 = new System.Windows.Forms.Button();
             this.OpenedPanel.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // OpenedPanel
@@ -57,8 +59,8 @@
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
-            this.OpenedPanel.Size = new System.Drawing.Size(170, 442);
-            this.OpenedPanel.TabIndex = 4;
+            this.OpenedPanel.Size = new System.Drawing.Size(187, 442);
+            this.OpenedPanel.TabIndex = 13;
             // 
             // button4
             // 
@@ -67,7 +69,7 @@
             this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button4.Location = new System.Drawing.Point(6, 122);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(155, 36);
+            this.button4.Size = new System.Drawing.Size(171, 36);
             this.button4.TabIndex = 6;
             this.button4.Text = "Officers";
             this.button4.UseVisualStyleBackColor = true;
@@ -79,7 +81,7 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Location = new System.Drawing.Point(6, 394);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 36);
+            this.button3.Size = new System.Drawing.Size(171, 36);
             this.button3.TabIndex = 5;
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
@@ -91,11 +93,10 @@
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button2.Location = new System.Drawing.Point(6, 66);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 34);
+            this.button2.Size = new System.Drawing.Size(171, 34);
             this.button2.TabIndex = 4;
             this.button2.Text = "Past Communications";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -105,11 +106,10 @@
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button1.Location = new System.Drawing.Point(6, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 36);
+            this.button1.Size = new System.Drawing.Size(171, 36);
             this.button1.TabIndex = 3;
             this.button1.Text = "Decrypt";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel1
             // 
@@ -119,7 +119,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(27, 442);
-            this.panel1.TabIndex = 3;
+            this.panel1.TabIndex = 12;
             // 
             // btnPanelOpen
             // 
@@ -134,106 +134,122 @@
             this.btnPanelOpen.TabIndex = 1;
             this.btnPanelOpen.Text = "=";
             this.btnPanelOpen.UseVisualStyleBackColor = true;
-            this.btnPanelOpen.Click += new System.EventHandler(this.btnPanelOpen_Click);
             // 
-            // timer1
+            // dataGridView1
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(43, 34);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(668, 177);
+            this.dataGridView1.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(274, 3);
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(288, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 24);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Decrypt";
+            this.label1.Size = new System.Drawing.Size(177, 19);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Past Communications";
             // 
-            // richTextBox1
+            // label2
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(43, 38);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(202, 392);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(61, 260);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 19);
+            this.label2.TabIndex = 16;
+            this.label2.Text = "Duration :";
             // 
-            // btnDecrypt
+            // label3
             // 
-            this.btnDecrypt.BackColor = System.Drawing.Color.Teal;
-            this.btnDecrypt.FlatAppearance.BorderSize = 0;
-            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDecrypt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDecrypt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDecrypt.Location = new System.Drawing.Point(251, 85);
-            this.btnDecrypt.Name = "btnDecrypt";
-            this.btnDecrypt.Size = new System.Drawing.Size(115, 58);
-            this.btnDecrypt.TabIndex = 7;
-            this.btnDecrypt.Text = "Decrypt";
-            this.btnDecrypt.UseVisualStyleBackColor = false;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(43, 228);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 19);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "MessageID :";
             // 
-            // richTextBox2
+            // label4
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(372, 38);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(248, 392);
-            this.richTextBox2.TabIndex = 8;
-            this.richTextBox2.Text = "";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(59, 292);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 19);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Message :";
             // 
-            // btnSend
+            // textBox1
             // 
-            this.btnSend.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnSend.FlatAppearance.BorderSize = 0;
-            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSend.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSend.Location = new System.Drawing.Point(251, 203);
-            this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(115, 58);
-            this.btnSend.TabIndex = 9;
-            this.btnSend.Text = "Send";
-            this.btnSend.UseVisualStyleBackColor = false;
+            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(152, 288);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(559, 26);
+            this.textBox1.TabIndex = 19;
             // 
-            // btnClose
+            // textBox2
             // 
-            this.btnClose.BackColor = System.Drawing.Color.DarkCyan;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(251, 320);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(115, 58);
-            this.btnClose.TabIndex = 11;
-            this.btnClose.Text = "Close";
-            this.btnClose.UseVisualStyleBackColor = false;
+            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(152, 256);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(184, 26);
+            this.textBox2.TabIndex = 20;
             // 
-            // Decrypt
+            // textBox3
+            // 
+            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox3.Location = new System.Drawing.Point(152, 224);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(184, 26);
+            this.textBox3.TabIndex = 21;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.DarkCyan;
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button5.Location = new System.Drawing.Point(540, 394);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(171, 36);
+            this.button5.TabIndex = 22;
+            this.button5.Text = "Close";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // Past_Communications
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(632, 442);
-            this.Controls.Add(this.richTextBox2);
+            this.ClientSize = new System.Drawing.Size(723, 442);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.OpenedPanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.btnDecrypt);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Decrypt";
-            this.Text = "Decrypt";
-            this.Load += new System.EventHandler(this.Decrypt_Load);
+            this.Name = "Past_Communications";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Past_Communications";
             this.OpenedPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
         private System.Windows.Forms.Panel OpenedPanel;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
@@ -241,12 +257,14 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPanelOpen;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button btnDecrypt;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button5;
     }
 }
