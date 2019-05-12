@@ -24,7 +24,5 @@ namespace Bussiness__Layer
             this.duration = c_duration;
             this.message = c_message;
         }
-
-
     }
 }
