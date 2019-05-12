@@ -49,6 +49,12 @@
     <Compile Include="Communications.Designer.cs">
       <DependentUpon>Communications.cs</DependentUpon>
     </Compile>
+    <Compile Include="Decrypt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Decrypt.Designer.cs">
+      <DependentUpon>Decrypt.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Communications.resx">
       <DependentUpon>Communications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Decrypt.resx">
+      <DependentUpon>Decrypt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
