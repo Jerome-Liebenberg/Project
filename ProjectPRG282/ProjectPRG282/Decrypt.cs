@@ -83,15 +83,5 @@ namespace ProjectPRG282
         {
 
         }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
