@@ -15,5 +15,15 @@ namespace ProjectPRG282
         {
             InitializeComponent();
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void btnOfficer_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
