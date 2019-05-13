@@ -32,7 +32,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPanelOpen = new System.Windows.Forms.Button();
             this.OpenedPanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btn = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -73,7 +73,7 @@
             // OpenedPanel
             // 
             this.OpenedPanel.BackColor = System.Drawing.Color.DarkCyan;
-            this.OpenedPanel.Controls.Add(this.button4);
+            this.OpenedPanel.Controls.Add(this.btn);
             this.OpenedPanel.Controls.Add(this.button3);
             this.OpenedPanel.Controls.Add(this.button2);
             this.OpenedPanel.Controls.Add(this.button1);
@@ -83,17 +83,17 @@
             this.OpenedPanel.Size = new System.Drawing.Size(155, 481);
             this.OpenedPanel.TabIndex = 2;
             // 
-            // button4
+            // btn
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(6, 122);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 36);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Officers";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn.Location = new System.Drawing.Point(6, 122);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(140, 36);
+            this.btn.TabIndex = 6;
+            this.btn.Text = "Officers";
+            this.btn.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -206,7 +206,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNameOfOfficer;
         private System.Windows.Forms.Label label2;
