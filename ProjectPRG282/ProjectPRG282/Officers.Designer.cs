@@ -30,10 +30,10 @@
         {
             this.button5 = new System.Windows.Forms.Button();
             this.OpenedPanel = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOfficer = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.btnPastComminications = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPanelOpen = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -66,64 +66,66 @@
             // OpenedPanel
             // 
             this.OpenedPanel.BackColor = System.Drawing.Color.DarkCyan;
-            this.OpenedPanel.Controls.Add(this.button4);
-            this.OpenedPanel.Controls.Add(this.button3);
-            this.OpenedPanel.Controls.Add(this.button2);
-            this.OpenedPanel.Controls.Add(this.button1);
+            this.OpenedPanel.Controls.Add(this.btnOfficer);
+            this.OpenedPanel.Controls.Add(this.btnClose);
+            this.OpenedPanel.Controls.Add(this.btnPastComminications);
+            this.OpenedPanel.Controls.Add(this.btnDecrypt);
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
             this.OpenedPanel.Size = new System.Drawing.Size(187, 441);
             this.OpenedPanel.TabIndex = 24;
             // 
-            // button4
+            // btnOfficer
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button4.Location = new System.Drawing.Point(6, 122);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(171, 36);
-            this.button4.TabIndex = 6;
-            this.button4.Text = "Officers";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOfficer.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOfficer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnOfficer.Location = new System.Drawing.Point(6, 122);
+            this.btnOfficer.Name = "btnOfficer";
+            this.btnOfficer.Size = new System.Drawing.Size(171, 36);
+            this.btnOfficer.TabIndex = 6;
+            this.btnOfficer.Text = "Officers";
+            this.btnOfficer.UseVisualStyleBackColor = true;
+            this.btnOfficer.Click += new System.EventHandler(this.btnOfficer_Click);
             // 
-            // button3
+            // btnClose
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(6, 394);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(171, 36);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Close";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnClose.Location = new System.Drawing.Point(6, 394);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(171, 36);
+            this.btnClose.TabIndex = 5;
+            this.btnClose.Text = "Close";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // button2
+            // btnPastComminications
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(6, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 34);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Past Communications";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPastComminications.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPastComminications.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPastComminications.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPastComminications.Location = new System.Drawing.Point(6, 66);
+            this.btnPastComminications.Name = "btnPastComminications";
+            this.btnPastComminications.Size = new System.Drawing.Size(171, 34);
+            this.btnPastComminications.TabIndex = 4;
+            this.btnPastComminications.Text = "Past Communications";
+            this.btnPastComminications.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnDecrypt
             // 
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(6, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 36);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Decrypt";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDecrypt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecrypt.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecrypt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDecrypt.Location = new System.Drawing.Point(6, 12);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(171, 36);
+            this.btnDecrypt.TabIndex = 3;
+            this.btnDecrypt.Text = "Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
@@ -252,10 +254,9 @@
 
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Panel OpenedPanel;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Button btnPastComminications;
+        private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPanelOpen;
         private System.Windows.Forms.TextBox textBox3;
@@ -266,5 +267,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.Button btnOfficer;
     }
 }

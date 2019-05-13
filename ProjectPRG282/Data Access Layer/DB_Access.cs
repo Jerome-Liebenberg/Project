@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Data_Access_Layer
 {
-    class DB_Access
+    public class DB_Access
     {
         SqlConnectionStringBuilder connection = new SqlConnectionStringBuilder();
         public DB_Access()
@@ -19,7 +19,7 @@ namespace Data_Access_Layer
             connection.IntegratedSecurity = ;
         }
 
-        public DataSet ReadData(string _tblName)   // Reading data from the database. Can be used for user login for user ID and User ranking (Adjust code to return these values)
+        public DataSet ReadData(string _tblName)   // Reading data from the database for user login details.
         {
             DataSet rawData = new DataSet();
             SqlConnection conn = new SqlConnection(connection.ToString());
@@ -73,6 +73,73 @@ namespace Data_Access_Layer
                     }
                 }
                 
+            }
+        }
+
+        // 2 methods for adding and removing Users from/to the Database
+
+        public void AddUser(int _IDNum, string _UName, string _USurname, int _UAge, int _URank, string _Username, string _Password)
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            string qry = string.Format("INSERT INTO " +
+                "Users (IDNumber,U_Name,U_Surname,U_Age,U_Rank,Username,U_Password)" +
+                " VALUES ({0},'{1}','{2}',{3},{4},'{5}','{6}')",_IDNum, _UName, _USurname, _UAge, _URank, _Username, _Password);
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(qry, conn);
+                int Changed = 0;
+                Changed = command.ExecuteNonQuery();
+                if (Changed > 0)
+                {
+                    MessageBox.Show("Successfully added user to the system.","Add user",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("User was not added.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (SqlException se)
+            {
+                MessageBox.Show(se.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+        public void RemoveUser(int _UserID) // Remove using the Primary key (UserID) which removes all the data associated with that primary key
+        {
+            SqlConnection conn = new SqlConnection(connection.ToString());
+            string qry = string.Format("DELETE FROM Users WHERE IDNumber = {0}",_UserID);
+            try
+            {
+                conn.Open();
+                SqlCommand command = new SqlCommand(qry,conn);
+                int Changed = 0;
+                Changed = command.ExecuteNonQuery();
+                if (Changed > 0)
+                {
+                    MessageBox.Show("Successfully removed user from the system.", "Removed user", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("User was not removed.", "Error.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (SqlException se)
+            {
+                MessageBox.Show(se.Message);
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
             }
         }
     }
