@@ -55,6 +55,21 @@ namespace ProjectPRG282
         {
             timer1.Start();
             OpenedPanel.Hide();
+            richTextBox1.AllowDrop = true;
+            richTextBox1.DragDrop += richTextBox1_DragDrop;
+        }
+
+        private void richTextBox1_DragDrop(object sender, DragEventArgs e)
+        {
+            var data = e.Data.GetData(DataFormats.FileDrop);
+            if (data != null)
+            {
+                var filenames = data as string[];
+                if (filenames.Length > 0)
+                {
+                    richTextBox1.LoadFile(filenames[0], RichTextBoxStreamType.PlainText);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

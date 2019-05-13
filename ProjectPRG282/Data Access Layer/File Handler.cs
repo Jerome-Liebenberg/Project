@@ -9,91 +9,67 @@ namespace Data_Access_Layer
 {
     class File_Handler
     {
-        FileStream _FStream;
-        StreamReader _myReader;
-        StreamWriter _myWriter;
+        string encrypted_string;
 
-        public File_Handler()  // No need to have a Filepath property because we will be reading from and writing to different txtFiles
+        public File_Handler() //default Constructor
         {
 
         }
 
-        public List<string> EncryptMsg(string _FilePath)   // Method for reading the Encrypted mesage from the txtFile
+        public string Binarytostring(string binary)
         {
-            string line = string.Empty;
-            List<string> EncrptMsg = new List<string>();
-
-            try
+            string tempString = "";
+            string Character = System.Text.RegularExpressions.Regex.Replace(binary, "[^01]", "");
+            byte[] Bytes = new byte[(Character.Length / 8) - 1 + 1];
+            for (int Index = 0; Index <= Bytes.Length - 1; Index++)
             {
-                _FStream = new FileStream(_FilePath, FileMode.Open, FileAccess.Read);
-                _myReader = new StreamReader(_FStream);
-                line = _myReader.ReadLine();
-
-                while (line != null)                     // Might need to change according to format of txtFile by what seperates each word etc. (I have a photo)
-                {
-                    EncrptMsg.Add(line);
-                    line = _myReader.ReadLine();
-                }
-                // Returns list after the 'Finally'
+                Bytes[Index] = Convert.ToByte(Character.Substring(Index * 8, 8), 2);
             }
-            catch (FileNotFoundException)
-            {
-                MessageBox.Show("File {0} was not found.", _FilePath);
-            }
-            catch (DirectoryNotFoundException)
-            {
-                MessageBox.Show("Directory {0} was not found.", _FilePath);
-            }
-            catch (IOException ioe)
-            {
-                MessageBox.Show("Error: {0} ", ioe.Message);
-            }
-            finally
-            {
-                _myReader.Close();
-                _FStream.Close();
-            }
-            return EncrptMsg;
+            tempString = (string)(System.Text.ASCIIEncoding.ASCII.GetString(Bytes));
+            return tempString;
         }
 
-        public List<string> DecryptMsg(string _FilePath) // Method for writing the Unencrypted text to the Database (Don't know how to write to DB with txtFile)
+        public static char cipher(char ch, int key)
         {
-            string line = string.Empty;
-            List<string> DecrptMsg = new List<string>();
+            if (!char.IsLetter(ch))
+            {
 
-            try
-            {
-                _FStream = new FileStream(_FilePath, FileMode.Truncate, FileAccess.Write);  // Use Truncate becasue every encrypted message will be different therefore existing txtFile must be overwritten
-                _myWriter = new StreamWriter(_FStream);
-                line = _myReader.ReadLine();
-
-                //while (line != null)                                        // INSERT DECRYPTION CODE HERE!!!!
-                //{
-                //    DecrptMsg.Add(line);
-                //    line = _myReader.ReadLine();
-                //}
-
-                // Returns list after the 'Finally'
+                return ch;
             }
-            catch (FileNotFoundException)
-            {
-                MessageBox.Show("File {0} was not found.", _FilePath);
-            }
-            catch (DirectoryNotFoundException)
-            {
-                MessageBox.Show("Directory {0} was not found.", _FilePath);
-            }
-            catch (IOException ioe)
-            {
-                MessageBox.Show("Error: {0} ", ioe.Message);
-            }
-            finally
-            {
-                _myReader.Close();
-                _FStream.Close();
-            }
-            return DecrptMsg;
+            char d = char.IsUpper(ch) ? 'A' : 'a';
+            return (char)((((ch + key) - d) % 26) + d);
         }
 
+
+        public static string Encipher(string input, int key)
+        {
+            string output = string.Empty;
+
+            foreach (char ch in input)
+                output += cipher(ch, key);
+
+            return output;
+        }
+
+        public static string Decipher(string input, int key)
+        {
+            return Encipher(input, 26 - key);
+        }
+
+        public string[] GetDecyptedMessage(string tempstring)
+        {
+            string t;
+            string[] stringArray = null;
+
+            int key;
+            for (int i = 0; i < 8; i++)
+            {
+
+                key = i;
+                t = Decipher(tempstring, key);
+                stringArray = new string[] { t };
+            }
+            return stringArray;
+        }
     }
 }

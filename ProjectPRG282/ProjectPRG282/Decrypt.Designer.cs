@@ -57,7 +57,7 @@
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
-            this.OpenedPanel.Size = new System.Drawing.Size(170, 442);
+            this.OpenedPanel.Size = new System.Drawing.Size(10, 442);
             this.OpenedPanel.TabIndex = 4;
             // 
             // btnOfficer
@@ -155,9 +155,9 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(43, 38);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(202, 392);
+            this.richTextBox1.Size = new System.Drawing.Size(577, 120);
             this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.richTextBox1.Text = "Drag the Textfile here";
             // 
             // btnDecrypt
             // 
@@ -166,7 +166,7 @@
             this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecrypt.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDecrypt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnDecrypt.Location = new System.Drawing.Point(251, 85);
+            this.btnDecrypt.Location = new System.Drawing.Point(43, 164);
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(115, 58);
             this.btnDecrypt.TabIndex = 7;
@@ -175,9 +175,9 @@
             // 
             // richTextBox2
             // 
-            this.richTextBox2.Location = new System.Drawing.Point(372, 38);
+            this.richTextBox2.Location = new System.Drawing.Point(43, 228);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(248, 392);
+            this.richTextBox2.Size = new System.Drawing.Size(577, 202);
             this.richTextBox2.TabIndex = 8;
             this.richTextBox2.Text = "";
             // 
@@ -188,7 +188,7 @@
             this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSend.Location = new System.Drawing.Point(251, 203);
+            this.btnSend.Location = new System.Drawing.Point(278, 164);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(115, 58);
             this.btnSend.TabIndex = 9;
@@ -202,7 +202,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnClose.Location = new System.Drawing.Point(251, 320);
+            this.btnClose.Location = new System.Drawing.Point(505, 164);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(115, 58);
             this.btnClose.TabIndex = 11;
