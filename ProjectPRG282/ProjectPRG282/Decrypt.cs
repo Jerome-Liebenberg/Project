@@ -6,6 +6,10 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Bussiness__Layer;
+using System.Threading;
+using System.Diagnostics;
+
 
 namespace ProjectPRG282
 {
@@ -14,6 +18,7 @@ namespace ProjectPRG282
         int PW;
         bool hided;
         Communications communications = new Communications();
+        Stopwatch stopwatch = new Stopwatch();
         public Decrypt()
         {
             InitializeComponent();
@@ -90,6 +95,24 @@ namespace ProjectPRG282
         }
 
         private void btnClose_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            stopwatch.Start();
+            Decryption decryption = new Decryption();
+            string encryptedmessage;
+            encryptedmessage = decryption.GetBinary(richTextBox1.Text);
+            richTextBox2.Lines = decryption.DecryptedMessage(encryptedmessage);
+            string source = richTextBox2.Text;
+            stopwatch.Stop();
+            int duration = Convert.ToInt32(stopwatch.ElapsedMilliseconds);
+
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
         {
 
         }
