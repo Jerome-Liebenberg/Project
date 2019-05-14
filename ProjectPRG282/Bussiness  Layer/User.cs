@@ -65,14 +65,19 @@ namespace Bussiness__Layer
             return returnUserList;
         }
 
-        public void AddUser(int _UserID, string _UName, string _USurname, int _UAge, int _URank, string _Username, string _PW)
+        public void AddUser(string _UName, string _USurname, int _UAge, int _URank, string _Username, string _PW)
         {
-            dba.AddUser(_UserID,_UName,_USurname,_UAge,_URank,_Username,_PW);
-        }
+            dba.AddUser(_UName,_USurname,_UAge,_URank,_Username,_PW);
+        } // For buttons on Officer form 
 
         public void RemoveUser(int _UserID)
         {
             dba.RemoveUser(_UserID);
-        }
+        } // For buttons on Officer form 
+
+        public void UpdateUser(int _UserID, string _UName, string _USurname, int _UAge, int _URank, string _Username, string _P)
+        {
+            dba.UpdateUser(_UserID,_UName,  _USurname,  _UAge,  _URank,  _Username,  _P);
+        } 
     }
 }
