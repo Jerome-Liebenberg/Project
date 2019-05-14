@@ -47,7 +47,7 @@ namespace Data_Access_Layer
             return rawData;
         }
 
-        public void InsertDecrptMsg(int id , DateTime duration,string message)  // Insert decrypted message to database // using this method to prevent SQL injection (More secure)
+        public void InsertDecrptMsg(int id , int duration,string message)  // Insert decrypted message to database // using this method to prevent SQL injection (More secure)
         {
             using (SqlConnection conn = new SqlConnection(connection.ToString()))
             {

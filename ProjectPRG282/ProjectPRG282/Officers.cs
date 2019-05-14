@@ -10,8 +10,12 @@ using Bussiness__Layer;
 
 namespace ProjectPRG282
 {
+    
     public partial class Officers : Form
     {
+        int PW;
+        bool hided;
+        bool check;
         User usercls = new User();
         BindingSource bs = new BindingSource();
         
@@ -146,8 +150,13 @@ namespace ProjectPRG282
 
         private void Officers_Load(object sender, EventArgs e)
         {
-            bs.DataSource = dgvOfficers.SelectedCells;
-            
+            RefreshDisplay();
+            if (check == true)
+            {
+                timer1.Start();
+            }
+            OpenedPanel.Hide();
+
         }
 
         private void dgvOfficers_SelectionChanged(object sender, EventArgs e)
@@ -173,6 +182,38 @@ namespace ProjectPRG282
             Decrypt decrypt = new Decrypt();
             this.Hide();
             decrypt.Show();
+        }
+
+        private void btnPanelOpen_Click(object sender, EventArgs e)
+        {
+            OpenedPanel.Show();
+            timer1.Start();
+            check = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (hided)
+            {
+                OpenedPanel.Width = OpenedPanel.Width + 10;
+                if (OpenedPanel.Width >= PW)
+                {
+                    timer1.Stop();
+                    hided = false;
+                    check = true;
+                    this.Refresh();
+                }
+            }
+            else
+            {
+                OpenedPanel.Width = OpenedPanel.Width - 10;
+                if (OpenedPanel.Width <= 0)
+                {
+                    timer1.Stop();
+                    hided = true;
+                    this.Refresh();
+                }
+            }
         }
     }
 }

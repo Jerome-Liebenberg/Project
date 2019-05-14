@@ -12,17 +12,17 @@ namespace Bussiness__Layer
     {
         private int idnumber;
         private int messageid;
-        private DateTime duration;
+        private int duration;
         private string message;
 
         DB_Access dba = new DB_Access();
 
         public int Idnumber { get => idnumber; set => idnumber = value; }
         public int Messageid { get => messageid; set => messageid = value; }
-        public DateTime Duration { get => duration; set => duration = value; }
+        public int Duration { get => duration; set => duration = value; }
         public string Message { get => message; set => message = value; }
 
-        public Communications(int c_idnumber,int c_messageid,DateTime c_duration,string c_message)
+        public Communications(int c_idnumber,int c_messageid,int c_duration,string c_message)
         {
             this.idnumber = c_idnumber;
             this.messageid = c_messageid;
@@ -35,7 +35,7 @@ namespace Bussiness__Layer
 
         }
 
-        public void AddCommunication(int id, DateTime duration, string message)
+        public void AddCommunication(int id, int duration, string message)
         {
             DB_Access dB = new DB_Access();
             dB.InsertDecrptMsg(id, duration, message);
@@ -51,7 +51,7 @@ namespace Bussiness__Layer
                 Communications comms = new Communications();
 
                 comms.idnumber = int.Parse(item["IDNumber"].ToString());
-                comms.duration = DateTime.Parse(item["Duration"].ToString());
+                comms.duration = int.Parse(item["Duration"].ToString());
                 comms.message = item["C_Message"].ToString();
 
                 returnCommsList.Add(comms);

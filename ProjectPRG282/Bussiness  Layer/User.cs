@@ -28,15 +28,15 @@ namespace Bussiness__Layer
 
         DB_Access dba = new DB_Access();
 
-        public User(string _Username, string _Password)
+        public User(int id ,string _UName, string _USurname, int _UAge, int _URank, string _Username, string _PW)
         {
-            //this.idNumber = ; // Need to get UserID without them entering it (Load from Database?)
-            // this.name = ;
-            // this.surname = ;
-            // this.age = ;
-            //this.rank = ; // Ranking according to the user logged in- get from database?
+            this.idNumber = id; 
+            this.name = _UName;
+            this.surname = _USurname;
+            this.age = _UAge;
+            this.rank = _URank; 
             this.username = _Username;
-            this.password = _Password;
+            this.password = _PW;
         }
 
         public User() // default Constructor

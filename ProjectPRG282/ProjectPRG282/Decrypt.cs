@@ -133,12 +133,24 @@ namespace ProjectPRG282
                 encryptedmessage = decryption.GetBinary(richTextBox1.Text);
                 richTextBox2.Lines = decryption.DecryptedMessage(encryptedmessage);
                 message = richTextBox2.Text;
+                string SetenceString = message;
+                var result = string.Join(" ", SetenceString.Split(' ').Distinct());
+                richTextBox2.Text = result;
                 stopwatch.Stop();
                 int duration = Convert.ToInt32(stopwatch.ElapsedMilliseconds);
                 Communications com = new Communications();
                 Form1 form1 = new Form1();
                 int id = form1.GetUserID();
-                com.AddCommunication(id, Convert.ToDateTime(duration), message);                
+
+                if (richTextBox2.Text == string.Empty)
+                {
+                    MessageBox.Show("Please give a valid textfile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    com.AddCommunication(id, duration, message); 
+                }
+                              
             }
         }
 

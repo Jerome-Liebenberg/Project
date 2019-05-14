@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnClose2 = new System.Windows.Forms.Button();
             this.OpenedPanel = new System.Windows.Forms.Panel();
             this.btnClose = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@
             this.btnAddUser = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnRemoveUser = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.OpenedPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOfficers)).BeginInit();
@@ -81,7 +83,7 @@
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
-            this.OpenedPanel.Size = new System.Drawing.Size(190, 362);
+            this.OpenedPanel.Size = new System.Drawing.Size(10, 362);
             this.OpenedPanel.TabIndex = 24;
             // 
             // btnClose
@@ -147,6 +149,7 @@
             this.btnPanelOpen.TabIndex = 1;
             this.btnPanelOpen.Text = "=";
             this.btnPanelOpen.UseVisualStyleBackColor = true;
+            this.btnPanelOpen.Click += new System.EventHandler(this.btnPanelOpen_Click);
             // 
             // label1
             // 
@@ -332,6 +335,11 @@
             this.btnRemoveUser.UseVisualStyleBackColor = false;
             this.btnRemoveUser.Click += new System.EventHandler(this.btnRemoveUser_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 20;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Officers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -395,5 +403,6 @@
         private System.Windows.Forms.Button btnAddUser;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnRemoveUser;
+        private System.Windows.Forms.Timer timer1;
     }
 }

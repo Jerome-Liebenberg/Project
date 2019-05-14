@@ -14,6 +14,7 @@ namespace Bussiness__Layer
         {
 
         }
+
         public string GetBinary(string binary)
         {
             File_Handler fh = new File_Handler();

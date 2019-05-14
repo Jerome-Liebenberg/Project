@@ -32,11 +32,6 @@ namespace ProjectPRG282
             bs.DataSource = comms.GetPastComms();
             dgvDisplay.DataSource = bs;
 
-            if (check == true)
-            {
-                timer1.Start();
-            }
-            OpenedPanel.Hide();
         }
 
         private void btnPanelOpen_Click(object sender, EventArgs e)

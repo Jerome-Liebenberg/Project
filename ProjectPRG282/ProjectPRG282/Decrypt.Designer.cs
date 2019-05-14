@@ -57,7 +57,7 @@
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
-            this.OpenedPanel.Size = new System.Drawing.Size(175, 442);
+            this.OpenedPanel.Size = new System.Drawing.Size(178, 442);
             this.OpenedPanel.TabIndex = 4;
             // 
             // btnOfficer
