@@ -111,6 +111,7 @@ namespace Data_Access_Layer
                 }
             }
         }
+
         public void RemoveUser(int _UserID) // Remove using the Primary key (UserID) which removes all the data associated with that primary key
         {
             SqlConnection conn = new SqlConnection(connection.ToString());
