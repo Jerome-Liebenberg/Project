@@ -10,11 +10,16 @@ using Bussiness__Layer;
 
 namespace ProjectPRG282
 {
+    
     public partial class Form1 : Form
     {
-        Communications communications = new Communications();
+        public int userid;
+
+        Decrypt decrypt = new Decrypt();
+        Past_Communications comms = new Past_Communications();
         Officers frmOfficers = new Officers();
         User UserCls = new User();
+
         public Form1()
         {
             InitializeComponent();
@@ -34,35 +39,53 @@ namespace ProjectPRG282
         {
             string Username = txtUsername.Text;
             string Pw = txtPassword.Text;
+            bool found = false;
             List<User> lUsers =  UserCls.GetUsers(); //  Method used for populating the list<User> with the DBA method for PopulateUsers method that returns a list of Users
 
             foreach (User user in lUsers)
             {
                 if (Username == user.Username && Pw == user.Password) // Need to find out if High-Ranking or low-ranking to display appropriate form
                 {
+                    found = true;
                     if (user.Rank >= 5)  // High ranking officers gain access to button for adding additonal officers
                     {
-                        frmOfficers.btnOfficer.Enabled = true;
-                        communications.Show();
-                        this.Hide();
+                        comms.btnOfficers.Enabled = true;
+                        decrypt.btnOfficer.Enabled = true;
                     }
                     else  // Low ranking are not able to see the button specifically for high ranking officers
                     {
-                        frmOfficers.btnOfficer.Enabled = false;
-                        communications.Show();
-                        this.Hide();
+                        comms.btnOfficers.Enabled = false;
+                        decrypt.btnOfficer.Enabled = false;
                     }
+                    userid = user.IdNumber;
+                    break;
                 }
                 else
                 {
-                    MessageBox.Show("Invalid Log in details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    found = false;
                 }
+            }
+            if (found == true)
+            {
+                decrypt.Show();
+                this.Hide();
+            }
+            else
+            {
+                txtUsername.Clear();
+                txtPassword.Clear();
+                txtUsername.Focus();
+                MessageBox.Show("Invalid Log in details.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        public int GetUserID()
+        {
+            return userid;
         }
     }
 }

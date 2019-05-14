@@ -30,7 +30,6 @@
         {
             this.btnClose2 = new System.Windows.Forms.Button();
             this.OpenedPanel = new System.Windows.Forms.Panel();
-            this.btnOfficer = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnPastComminications = new System.Windows.Forms.Button();
             this.btnDecrypt = new System.Windows.Forms.Button();
@@ -76,28 +75,14 @@
             // OpenedPanel
             // 
             this.OpenedPanel.BackColor = System.Drawing.Color.DarkCyan;
-            this.OpenedPanel.Controls.Add(this.btnOfficer);
             this.OpenedPanel.Controls.Add(this.btnClose);
             this.OpenedPanel.Controls.Add(this.btnPastComminications);
             this.OpenedPanel.Controls.Add(this.btnDecrypt);
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
-            this.OpenedPanel.Size = new System.Drawing.Size(24, 362);
+            this.OpenedPanel.Size = new System.Drawing.Size(190, 362);
             this.OpenedPanel.TabIndex = 24;
-            // 
-            // btnOfficer
-            // 
-            this.btnOfficer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOfficer.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOfficer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOfficer.Location = new System.Drawing.Point(6, 122);
-            this.btnOfficer.Name = "btnOfficer";
-            this.btnOfficer.Size = new System.Drawing.Size(171, 36);
-            this.btnOfficer.TabIndex = 6;
-            this.btnOfficer.Text = "Officers";
-            this.btnOfficer.UseVisualStyleBackColor = true;
-            this.btnOfficer.Click += new System.EventHandler(this.btnOfficer_Click);
             // 
             // btnClose
             // 
@@ -123,6 +108,7 @@
             this.btnPastComminications.TabIndex = 4;
             this.btnPastComminications.Text = "Past Communications";
             this.btnPastComminications.UseVisualStyleBackColor = true;
+            this.btnPastComminications.Click += new System.EventHandler(this.btnPastComminications_Click);
             // 
             // btnDecrypt
             // 
@@ -136,6 +122,7 @@
             this.btnDecrypt.TabIndex = 3;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // panel1
             // 
@@ -393,7 +380,6 @@
         private System.Windows.Forms.Button btnPanelOpen;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvOfficers;
-        public System.Windows.Forms.Button btnOfficer;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.TextBox txtAge;

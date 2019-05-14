@@ -14,6 +14,8 @@ namespace ProjectPRG282
     {
         User usercls = new User();
         BindingSource bs = new BindingSource();
+        
+        
         public Officers()
         {
             InitializeComponent();
@@ -91,8 +93,21 @@ namespace ProjectPRG282
 
         private void button1_Click(object sender, EventArgs e)
         {
-            usercls.AddUser(txtName.Text,txtSurname.Text,int.Parse(txtAge.Text),int.Parse(txtRank.Text),txtUsername.Text,txtPassword.Text); // Auto generates IDNum for user
-            RefreshDisplay();
+            string Name = txtName.Text ;
+            string PW = txtPassword.Text ;
+            string Surname =  txtSurname.Text;
+            string Username = txtUsername.Text ;
+
+            if (txtAge.Text == null || Name == null || PW == null || txtRank.Text == null || Surname == null || Username == null)
+            {
+                MessageBox.Show("Invalid data inputs from text boxes. Please try again.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                usercls.AddUser(txtName.Text, txtSurname.Text, int.Parse(txtAge.Text), int.Parse(txtRank.Text), txtUsername.Text, txtPassword.Text); // Auto generates IDNum for user
+                RefreshDisplay();
+            }
+
         }
 
         private void btnClose2_Click(object sender, EventArgs e)
@@ -144,6 +159,20 @@ namespace ProjectPRG282
             txtRank.Text = Convert.ToString(user.Rank);
             txtSurname.Text = user.Surname;
             txtUsername.Text = user.Username;
+        }
+
+        private void btnPastComminications_Click(object sender, EventArgs e)
+        {
+            Past_Communications comms = new Past_Communications();
+            this.Hide();
+            comms.Show();
+        }
+
+        private void btnDecrypt_Click(object sender, EventArgs e)
+        {
+            Decrypt decrypt = new Decrypt();
+            this.Hide();
+            decrypt.Show();
         }
     }
 }

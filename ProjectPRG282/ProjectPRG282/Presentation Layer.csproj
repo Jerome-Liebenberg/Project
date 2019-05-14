@@ -43,12 +43,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Communications.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Communications.Designer.cs">
-      <DependentUpon>Communications.cs</DependentUpon>
-    </Compile>
     <Compile Include="Decrypt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,9 +69,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Communications.resx">
-      <DependentUpon>Communications.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Decrypt.resx">
       <DependentUpon>Decrypt.cs</DependentUpon>
     </EmbeddedResource>

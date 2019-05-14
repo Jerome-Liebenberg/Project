@@ -57,7 +57,7 @@
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
-            this.OpenedPanel.Size = new System.Drawing.Size(10, 442);
+            this.OpenedPanel.Size = new System.Drawing.Size(175, 442);
             this.OpenedPanel.TabIndex = 4;
             // 
             // btnOfficer
@@ -71,6 +71,7 @@
             this.btnOfficer.TabIndex = 6;
             this.btnOfficer.Text = "Officers";
             this.btnOfficer.UseVisualStyleBackColor = true;
+            this.btnOfficer.Click += new System.EventHandler(this.btnOfficer_Click);
             // 
             // button3
             // 
@@ -79,7 +80,7 @@
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button3.Location = new System.Drawing.Point(6, 394);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 36);
+            this.button3.Size = new System.Drawing.Size(155, 36);
             this.button3.TabIndex = 5;
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
@@ -139,6 +140,7 @@
             // 
             // timer1
             // 
+            this.timer1.Interval = 20;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
@@ -195,6 +197,7 @@
             this.btnSend.TabIndex = 9;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click_1);
             // 
             // btnClose
             // 
@@ -216,7 +219,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(632, 442);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.OpenedPanel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnClose);
@@ -224,6 +226,7 @@
             this.Controls.Add(this.btnDecrypt);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.richTextBox2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Decrypt";
             this.Text = "Decrypt";
@@ -254,21 +257,20 @@
 
     }
 
-        #endregion
+        //#endregion
 
-        private System.Windows.Forms.Panel OpenedPanel;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button btnPastComms;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnPanelOpen;
-        private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button btnDecrypt;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.Button btnClose;
-        public System.Windows.Forms.Button btnOfficer;
+        //private System.Windows.Forms.Panel OpenedPanel;
+        //private System.Windows.Forms.Button button3;
+        //private System.Windows.Forms.Button btnPastComms;
+        //private System.Windows.Forms.Button button1;
+        //private System.Windows.Forms.Panel panel1;
+        //private System.Windows.Forms.Button btnPanelOpen;
+        //private System.Windows.Forms.Timer timer1;
+        //private System.Windows.Forms.Label label1;
+        //private System.Windows.Forms.RichTextBox richTextBox1;
+        //private System.Windows.Forms.Button btnDecrypt;
+        //private System.Windows.Forms.RichTextBox richTextBox2;
+        //private System.Windows.Forms.Button btnSend;
+        //private System.Windows.Forms.Button btnClose;
+        //public System.Windows.Forms.Button btnOfficer;
     }
-}

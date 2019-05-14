@@ -53,10 +53,10 @@ namespace Bussiness__Layer
             }
         }
 
-        public int ValidSentence(string message)
-        {
-            string[] sentences = message.Split(new char[] {' '});
-            string[] wordsToMatch = {  };
-        }
+        //public int ValidSentence(string message)
+        //{
+        //    string[] sentences = message.Split(new char[] {' '});
+        //    string[] wordsToMatch = {  };
+        //}
     }
 }

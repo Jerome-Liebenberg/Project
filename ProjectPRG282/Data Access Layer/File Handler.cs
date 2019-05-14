@@ -9,7 +9,7 @@ namespace Data_Access_Layer
 {
     public class File_Handler
     {
-        string encrypted_string;
+        string encrypted_string = string.Empty;
 
         public File_Handler() //default Constructor
         {
