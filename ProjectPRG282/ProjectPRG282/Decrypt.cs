@@ -116,5 +116,10 @@ namespace ProjectPRG282
         {
 
         }
+
+        private void btnDecrypt_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

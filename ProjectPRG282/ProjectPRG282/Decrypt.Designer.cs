@@ -172,7 +172,7 @@
             this.btnDecrypt.TabIndex = 7;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = false;
-            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click_1);
             // 
             // richTextBox2
             // 
@@ -195,7 +195,6 @@
             this.btnSend.TabIndex = 9;
             this.btnSend.Text = "Send";
             this.btnSend.UseVisualStyleBackColor = false;
-            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // btnClose
             // 
@@ -235,6 +234,25 @@
             this.PerformLayout();
 
         }
+
+        #endregion
+
+        private System.Windows.Forms.Panel OpenedPanel;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPastComms;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnPanelOpen;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button btnDecrypt;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.Button btnClose;
+        public System.Windows.Forms.Button btnOfficer;
+
+    }
 
         #endregion
 
