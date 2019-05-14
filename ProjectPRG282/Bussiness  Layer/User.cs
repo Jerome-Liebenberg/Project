@@ -68,11 +68,11 @@ namespace Bussiness__Layer
         public void AddUser(int _UserID, string _UName, string _USurname, int _UAge, int _URank, string _Username, string _PW)
         {
             dba.AddUser(_UserID,_UName,_USurname,_UAge,_URank,_Username,_PW);
-        }
+        } // For buttons on Officer form (Still need to add) 
 
         public void RemoveUser(int _UserID)
         {
             dba.RemoveUser(_UserID);
-        }
+        } // For buttons on Officer form (Still need to add)
     }
 }

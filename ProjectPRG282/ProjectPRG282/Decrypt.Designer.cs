@@ -172,6 +172,7 @@
             this.btnDecrypt.TabIndex = 7;
             this.btnDecrypt.Text = "Decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = false;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // richTextBox2
             // 
