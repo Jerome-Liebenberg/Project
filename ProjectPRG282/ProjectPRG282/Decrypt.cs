@@ -6,14 +6,26 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Bussiness__Layer;
+using System.Threading;
+using System.Diagnostics;
+using System.Net.Mail;
+using System.Net;
+using System.IO;
+
 
 namespace ProjectPRG282
 {
     public partial class Decrypt : Form
     {
         int PW;
+        string message;
         bool hided;
-        Communications communications = new Communications();
+
+        Past_Communications P_communications = new Past_Communications();
+        Officers officers = new Officers();
+        Stopwatch stopwatch = new Stopwatch();
+
         public Decrypt()
         {
             InitializeComponent();
@@ -68,6 +80,7 @@ namespace ProjectPRG282
                 if (filenames.Length > 0)
                 {
                     richTextBox1.LoadFile(filenames[0], RichTextBoxStreamType.PlainText);
+                    File.Delete(filenames[0]);
                 }
             }
         }
@@ -76,27 +89,94 @@ namespace ProjectPRG282
         {
             Decrypt decrypt = new Decrypt();
             decrypt.Show();
-            communications.Hide();
+            P_communications.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            P_communications.Show();
+            this.Hide();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Environment.Exit(0);
+           
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-
+            Environment.Exit(0);
         }
 
         private void btnDecrypt_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void btnSend_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDecrypt_Click_1(object sender, EventArgs e)
+        {
+            if (richTextBox1.Text == string.Empty)
+            {
+                MessageBox.Show("Please give a valid textfile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                stopwatch.Start();
+                Decryption decryption = new Decryption();
+                string encryptedmessage;
+                encryptedmessage = decryption.GetBinary(richTextBox1.Text);
+                richTextBox2.Lines = decryption.DecryptedMessage(encryptedmessage);
+                message = richTextBox2.Text;
+                string SetenceString = message;
+                var result = string.Join(" ", SetenceString.Split(' ').Distinct());
+                richTextBox2.Text = result;
+                stopwatch.Stop();
+                int duration = Convert.ToInt32(stopwatch.ElapsedMilliseconds);
+                Communications com = new Communications();
+                Form1 form1 = new Form1();
+                int id = form1.GetUserID();
+
+                if (richTextBox2.Text == string.Empty)
+                {
+                    MessageBox.Show("Please give a valid textfile.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    com.AddCommunication(id, duration, message); 
+                }
+                              
+            }
+        }
+
+        private void btnOfficer_Click(object sender, EventArgs e)
+        {
+            officers.Show();
+            this.Hide();
+        }
+
+        private void btnSend_Click_1(object sender, EventArgs e)
+        {
+            MailMessage mail = new MailMessage("jeromeliebenberg41@gmail.com", "dshapovalov199974@gmail.com");
+            SmtpClient SmtpServer = new SmtpClient();
+            mail.Subject = "Encrypted Message";
+            mail.Body = "The decrypted message : /n{0}" + message;
+            mail.IsBodyHtml = true;
+            SmtpServer.Port = 587;
+            SmtpServer.DeliveryMethod = SmtpDeliveryMethod.Network;
+            SmtpServer.UseDefaultCredentials = false;
+            NetworkCredential credential = new NetworkCredential("jeromeliebenberg41@gmail.com", "liebenberghuis41");
+            SmtpServer.Credentials = credential;
+            SmtpServer.Host = "smtp.gmail.com";
+            SmtpServer.EnableSsl = true;
+
+            SmtpServer.Send(mail);
+            MessageBox.Show("mail Send");
         }
     }
 }

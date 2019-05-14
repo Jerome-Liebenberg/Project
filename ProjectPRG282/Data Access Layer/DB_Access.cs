@@ -14,9 +14,10 @@ namespace Data_Access_Layer
         public DB_Access()
         {
             // Need to get Server name from datbase for the code below!
-            connection.DataSource = ;
-            connection.InitialCatalog = ;
-            connection.IntegratedSecurity = ;
+            //Data Source = JEROMEPC\SQLEXPRESS; Initial Catalog = Programming282Database; Integrated Security = True
+            connection.DataSource = @"JEROMEPC\SQLEXPRESS";
+            connection.InitialCatalog = "Programming282Database";
+            connection.IntegratedSecurity = true;
         }
 
         public DataSet ReadData(string _tblName)   // Reading data from the database for user login details.
@@ -46,7 +47,7 @@ namespace Data_Access_Layer
             return rawData;
         }
 
-        public void InsertDecrptMsg(List<string> _DecryptMsg)  // Insert decrypted message to database // using this method to prevent SQL injection (More secure)
+        public void InsertDecrptMsg(int id , int duration,string message)  // Insert decrypted message to database // using this method to prevent SQL injection (More secure)
         {
             using (SqlConnection conn = new SqlConnection(connection.ToString()))
             {
@@ -54,9 +55,11 @@ namespace Data_Access_Layer
                 {
                     conn.Open();
 
-                    using (SqlCommand command = new SqlCommand("UpdateDB_DecryptMsg", conn))   // Not sure if the first paramater is correct?
+                    using (SqlCommand command = new SqlCommand("ProcInsertDecryption", conn))   
                     {
-                        command.Parameters.AddWithValue("@DecryptedMessage", _DecryptMsg);       // Mirror the datafield (column) of the database's name in place of the "@DecryptedMessage" eg) Instead of "@DecryptedMessage", in the database it is "@DecryptMsg" so you need to change that to "@DecryptMsg" to match database's field for the decypted messages
+                        command.Parameters.AddWithValue("@id", id);
+                        command.Parameters.AddWithValue("@duration", duration);
+                        command.Parameters.AddWithValue("@message", message);
                         command.ExecuteNonQuery();
                         MessageBox.Show("Message was successfully decrypted and stored.");
                     }

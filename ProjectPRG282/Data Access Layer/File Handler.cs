@@ -7,9 +7,9 @@ using System.Windows.Forms;
 
 namespace Data_Access_Layer
 {
-    class File_Handler
+    public class File_Handler
     {
-        string encrypted_string;
+        string encrypted_string = string.Empty;
 
         public File_Handler() //default Constructor
         {

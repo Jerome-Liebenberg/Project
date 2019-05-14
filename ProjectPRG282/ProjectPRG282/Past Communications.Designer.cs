@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.OpenedPanel = new System.Windows.Forms.Panel();
             this.btnOfficers = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDecrypt = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnPanelOpen = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvDisplay = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMessage = new System.Windows.Forms.TextBox();
+            this.txtDuration = new System.Windows.Forms.TextBox();
+            this.txtMessageID = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.OpenedPanel.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).BeginInit();
             this.SuspendLayout();
             // 
             // OpenedPanel
@@ -54,12 +55,11 @@
             this.OpenedPanel.BackColor = System.Drawing.Color.DarkCyan;
             this.OpenedPanel.Controls.Add(this.btnOfficers);
             this.OpenedPanel.Controls.Add(this.button3);
-            this.OpenedPanel.Controls.Add(this.button2);
-            this.OpenedPanel.Controls.Add(this.button1);
+            this.OpenedPanel.Controls.Add(this.btnDecrypt);
             this.OpenedPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.OpenedPanel.Location = new System.Drawing.Point(27, 0);
             this.OpenedPanel.Name = "OpenedPanel";
-            this.OpenedPanel.Size = new System.Drawing.Size(187, 442);
+            this.OpenedPanel.Size = new System.Drawing.Size(191, 442);
             this.OpenedPanel.TabIndex = 13;
             // 
             // btnOfficers
@@ -67,12 +67,13 @@
             this.btnOfficers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOfficers.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnOfficers.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnOfficers.Location = new System.Drawing.Point(6, 122);
+            this.btnOfficers.Location = new System.Drawing.Point(6, 62);
             this.btnOfficers.Name = "btnOfficers";
             this.btnOfficers.Size = new System.Drawing.Size(171, 36);
             this.btnOfficers.TabIndex = 6;
             this.btnOfficers.Text = "Officers";
             this.btnOfficers.UseVisualStyleBackColor = true;
+            this.btnOfficers.Click += new System.EventHandler(this.btnOfficers_Click);
             // 
             // button3
             // 
@@ -85,31 +86,21 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "Close";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // button2
+            // btnDecrypt
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(6, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(171, 34);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Past Communications";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(6, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(171, 36);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Decrypt";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnDecrypt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnDecrypt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDecrypt.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDecrypt.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnDecrypt.Location = new System.Drawing.Point(6, 10);
+            this.btnDecrypt.Name = "btnDecrypt";
+            this.btnDecrypt.Size = new System.Drawing.Size(171, 36);
+            this.btnDecrypt.TabIndex = 3;
+            this.btnDecrypt.Text = "Decrypt";
+            this.btnDecrypt.UseVisualStyleBackColor = true;
+            this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
             // 
             // panel1
             // 
@@ -134,14 +125,16 @@
             this.btnPanelOpen.TabIndex = 1;
             this.btnPanelOpen.Text = "=";
             this.btnPanelOpen.UseVisualStyleBackColor = true;
+            this.btnPanelOpen.Click += new System.EventHandler(this.btnPanelOpen_Click);
             // 
-            // dataGridView1
+            // dgvDisplay
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(43, 34);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(668, 177);
-            this.dataGridView1.TabIndex = 14;
+            this.dgvDisplay.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDisplay.Location = new System.Drawing.Point(43, 34);
+            this.dgvDisplay.Name = "dgvDisplay";
+            this.dgvDisplay.Size = new System.Drawing.Size(668, 177);
+            this.dgvDisplay.TabIndex = 14;
+            this.dgvDisplay.SelectionChanged += new System.EventHandler(this.dgvDisplay_SelectionChanged);
             // 
             // label1
             // 
@@ -183,29 +176,29 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Message :";
             // 
-            // textBox1
+            // txtMessage
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(152, 288);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(559, 26);
-            this.textBox1.TabIndex = 19;
+            this.txtMessage.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessage.Location = new System.Drawing.Point(152, 288);
+            this.txtMessage.Name = "txtMessage";
+            this.txtMessage.Size = new System.Drawing.Size(559, 26);
+            this.txtMessage.TabIndex = 21;
             // 
-            // textBox2
+            // txtDuration
             // 
-            this.textBox2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(152, 256);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(184, 26);
-            this.textBox2.TabIndex = 20;
+            this.txtDuration.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDuration.Location = new System.Drawing.Point(152, 256);
+            this.txtDuration.Name = "txtDuration";
+            this.txtDuration.Size = new System.Drawing.Size(184, 26);
+            this.txtDuration.TabIndex = 20;
             // 
-            // textBox3
+            // txtMessageID
             // 
-            this.textBox3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(152, 224);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(184, 26);
-            this.textBox3.TabIndex = 21;
+            this.txtMessageID.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessageID.Location = new System.Drawing.Point(152, 224);
+            this.txtMessageID.Name = "txtMessageID";
+            this.txtMessageID.Size = new System.Drawing.Size(184, 26);
+            this.txtMessageID.TabIndex = 19;
             // 
             // button5
             // 
@@ -220,6 +213,11 @@
             this.button5.TabIndex = 22;
             this.button5.Text = "Close";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Past_Communications
             // 
@@ -229,21 +227,22 @@
             this.Controls.Add(this.button5);
             this.Controls.Add(this.OpenedPanel);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtMessageID);
+            this.Controls.Add(this.txtDuration);
+            this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvDisplay);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Past_Communications";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Past_Communications";
+            this.Load += new System.EventHandler(this.Past_Communications_Load);
             this.OpenedPanel.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDisplay)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,19 +251,19 @@
         #endregion
         private System.Windows.Forms.Panel OpenedPanel;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnDecrypt;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnPanelOpen;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvDisplay;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMessage;
+        private System.Windows.Forms.TextBox txtDuration;
+        private System.Windows.Forms.TextBox txtMessageID;
         private System.Windows.Forms.Button button5;
         public System.Windows.Forms.Button btnOfficers;
+        private System.Windows.Forms.Timer timer1;
     }
 }
